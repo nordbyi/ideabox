@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+/* NavBar */
+.side-nav {
+  background: #1f1f3d;
+}
+
+.logo {
+  color: #e9e9f3;
+}
+
+.nav-btn {
+  color: #e9e9f3;
+  background: #5356a4;
+}
+
+
+/* Form */
+
+
+
+/* Cards */

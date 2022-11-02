@@ -5,27 +5,78 @@
 }
 
 body {
+  display: flex;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  border: solid 1px orange;
+  height: 100vh;
 }
 
 /* NavBar */
 .side-nav {
   background: #1f1f3d;
+  width: 25vw;
 }
 
 .logo {
   color: #e9e9f3;
+  margin: 10px;
 }
 
 .nav-btn {
   color: #e9e9f3;
   background: #5356a4;
+  padding: 10px 15px;
+  border: none;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.sub-heading   {
+  color: #BFBFDD;
+  margin: 15px;
+}
+
+hr {
+  background-color: #353567;
+}
+
+/* Form */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px red;
+  background: #A9AAD2;
+  color: #1f1f3d;
+  width: 74.5vw;
+}
+
+.input {
+  width: 100px;
+}
+
+.label {
+  width: 100px;
+}
+
+.save-button {
+  border: none;
+  background: #1f1f3d;
 }
 
 
-/* Form */
-
-
-
 /* Cards */
+
+.card {
+  outline: 1px solid black;
+  width: 300px;
+  height: 325px;
+}

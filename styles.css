@@ -91,16 +91,36 @@ form {
 
 }
 .star {
-  /* width: ;
-  height: auto; */
+
 }
 
 .card-body {
-  outline: 1px solid red;
+  background: #FFFFFF;
+  width: 250px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.card-body h2 {
+
+}
+
+.card-body p {
+  font-weight: lighter;
+  margin-top: 10px;
 }
 
 .card-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  background: #5356A4;
   outline: 1px solid gold;
+  height: 30px;
+}
+
+.card-footer p {
+  margin-block: auto;
 }
 
 

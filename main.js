@@ -6,7 +6,9 @@ var cardContainer = document.querySelector('#card-container')
 //event Listeners
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
-  addIdeas()
+  newIdea()
+  storeIdea()
+  addCard()
 })
 
 //Global Variables
@@ -14,9 +16,15 @@ var ideas = []
 var currentIdea;
 
 //Functions
-function addIdeas() {
+function newIdea() {
   currentIdea = new Idea(titleInput.value, bodyInput.value)
+}
+
+function storeIdea() {
   ideas.push(currentIdea)
+}
+
+function addCard() {
   cardContainer.innerHTML += `
       <div class="card">
         <div class="card-header">
@@ -34,6 +42,4 @@ function addIdeas() {
           <p>Comment</p>
         </div>
       </div>`
-
-  console.log(ideas)
 }

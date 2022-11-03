@@ -16,20 +16,20 @@
       <hr>
     </nav>
     <main>
-      <form>
-        <!-- <div class="form-content"> -->
+      <form class="form-content">
+        <div>
           <label class="label">Title</label>
-          <input class="input">
+          <input class="input block" id="title-input">
+        </div>
+        <div>
           <label class="label">Body</label>
-          <input class="input">
-          <button class="save-button">Save</button>
-          <button></button>
-          <!-- <label for="site-search">Search the site:</label>
-  <input type="search" id="site-search" name="q">
-
-  <button>Search</button> -->
-          <input class="input">
-        <!-- </div> -->
+          <input class="input block body" id="body-input">
+        </div>
+        <button class="save-button">Save</button>
+        <div class="search-input">
+          <img src="./assets/search.svg" class="search-image">
+          <input class="input" type="search" id="site-search" placeholder="Search ideas">
+        </div>
       </form>
       <div>
         <div class="card">

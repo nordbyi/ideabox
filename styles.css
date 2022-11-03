@@ -53,6 +53,7 @@ main {
 form {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   border: solid 1px red;
   background: #A9AAD2;
@@ -62,18 +63,45 @@ form {
 }
 
 .input {
-  width: 100px;
+  width: 400px;
+  height: 40px;
+  border: solid 2px #353567;
+}
+
+.body {
+  height: 80px
+}
+
+.block {
+  display: block;
 }
 
 .label {
-  width: 100px;
+  width: 400px;
 }
 
 .save-button {
   border: none;
-  background: #1f1f3d;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #353567;
+  width: 400px;
+  height: 40px;
 }
 
+.search-input {
+  display: flex;
+  width: 400px;
+  height: 40px;
+  outline: none;
+}
+
+.search-image {
+  width: 10%;
+  background: #353567;
+  padding: 8px;
+}
 
 /* Cards */
 
@@ -81,7 +109,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  outline: 1px solid black;
+  outline: 2px solid black;
   width: 300px;
   height: 325px;
   margin-top: 15px;
@@ -92,7 +120,7 @@ form {
   display: flex;
   align-content: center;
   justify-content: space-between;
-  outline: 1px solid black;
+  outline: 2px solid black;
   background-color: #1f1f3d;
   height: 12%;
 

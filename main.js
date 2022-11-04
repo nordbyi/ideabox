@@ -31,10 +31,12 @@ var currentIdea;
 
 //Functions
 function cardAction() {
-  //if e.target.classList.id === event.target Id ; use method that will pull from array
-  //event.target.parentNode.id
-  //event.target.closest('.card')
-  console.log(event.target.closest('.card').id)
+  var cardID = event.target.closest('.card').id
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].id === Number(cardID)) {
+      ideas.splice(i, 1)
+    }
+  }
 }
 
 function newIdea() {

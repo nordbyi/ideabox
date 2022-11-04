@@ -163,7 +163,7 @@ form {
 }
 
 .disable {
-  background: red;
+  opacity: .4;
   cursor: not-allowed;
 }
 

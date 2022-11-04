@@ -162,8 +162,16 @@ form {
   font-size: 18px;
 }
 
+.disable {
+  background: red;
+  cursor: not-allowed;
+}
 
-
+/*  */
 .hidden {
   display: none;
 }
+
+
+
+

@@ -18,6 +18,7 @@ saveButton.addEventListener('click', function(event) {
   // disableSaveButton()
 })
 
+cardContainer.addEventListener('click', cardAction)
 
 for(var i = 0; i < inputs.length; i++) {
   console.log(inputs[i])
@@ -29,6 +30,13 @@ var ideas = []
 var currentIdea;
 
 //Functions
+function cardAction() {
+  //if e.target.classList.id === event.target Id ; use method that will pull from array
+  //event.target.parentNode.id
+  //event.target.closest('.card')
+  console.log(event.target.closest('.card').id)
+}
+
 function newIdea() {
   currentIdea = new Idea(titleInput.value, bodyInput.value)
 }
@@ -45,7 +53,7 @@ function resetInputs() {
 
 function addCard() {
   cardContainer.innerHTML += `
-      <div class="card">
+      <div class="card" id="${currentIdea.id}">
         <div class="card-header">
           <img class="star" id="white-star"  src="./assets/star.svg">
           <img class="star hidden" id="orange-star" src="./assets/star-active">

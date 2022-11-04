@@ -40,6 +40,7 @@ function storeIdea() {
 function resetInputs() {
   titleInput.value = ""
   bodyInput.value = ""
+  disableSaveButton()
 }
 
 function addCard() {
@@ -66,9 +67,11 @@ function disableSaveButton() {
   console.log(!titleInput.value || !bodyInput.value)
   if(!titleInput.value || !bodyInput.value) {
     saveButton.classList.add("disable")
+    saveButton.disabled = true
   } else {
     console.log("here!!!!!!")
     saveButton.classList.remove("disable")
+    saveButton.disabled = false
   }
 
 }

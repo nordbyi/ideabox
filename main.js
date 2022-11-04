@@ -3,13 +3,26 @@ var saveButton = document.querySelector('#save-button')
 var titleInput = document.querySelector('#title-input')
 var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
+var inputs = document.querySelectorAll('.block')
+console.log(inputs);
+
+disableSaveButton()
+
 //event Listeners
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
   storeIdea()
   addCard()
+  resetInputs()
+  // disableSaveButton()
 })
+
+
+for(var i = 0; i < inputs.length; i++) {
+  console.log(inputs[i])
+  inputs[i].addEventListener('keyup', disableSaveButton)
+}
 
 //Global Variables
 var ideas = []
@@ -22,6 +35,11 @@ function newIdea() {
 
 function storeIdea() {
   ideas.push(currentIdea)
+}
+
+function resetInputs() {
+  titleInput.value = ""
+  bodyInput.value = ""
 }
 
 function addCard() {
@@ -42,4 +60,15 @@ function addCard() {
           <p>Comment</p>
         </div>
       </div>`
+}
+
+function disableSaveButton() {
+  console.log(!titleInput.value || !bodyInput.value)
+  if(!titleInput.value || !bodyInput.value) {
+    saveButton.classList.add("disable")
+  } else {
+    console.log("here!!!!!!")
+    saveButton.classList.remove("disable")
+  }
+
 }

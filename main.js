@@ -4,7 +4,6 @@ var titleInput = document.querySelector('#title-input')
 var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
 var inputs = document.querySelectorAll('.block')
-console.log(inputs);
 
 disableSaveButton()
 
@@ -21,7 +20,6 @@ saveButton.addEventListener('click', function(event) {
 cardContainer.addEventListener('click', cardAction)
 
 for(var i = 0; i < inputs.length; i++) {
-  console.log(inputs[i])
   inputs[i].addEventListener('keyup', disableSaveButton)
 }
 
@@ -32,9 +30,16 @@ var currentIdea;
 //Functions
 function cardAction() {
   var cardID = event.target.closest('.card').id
+  console.log(event.target);
   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].id === Number(cardID)) {
+    // Deletes
+    if (ideas[i].id === Number(cardID) && event.target.id === 'clear-x') {
       ideas.splice(i, 1)
+      // Stars
+    }
+    if(ideas[i].id === Number(cardID) && event.target.id === 'white-star') {
+      ideas[i].updateIdea()
+      console.log(ideas[i])
     }
   }
   renderCards()
@@ -54,14 +59,16 @@ function resetInputs() {
   disableSaveButton()
 }
 
+var star1 = 'star';
+var star2 = 'star-active'
+
 function renderCards() {
   cardContainer.innerHTML = ""
   for (var i = 0; i < ideas.length; i++) {
     cardContainer.innerHTML += `
         <div class="card" id="${ideas[i].id}">
           <div class="card-header">
-            <img class="star" id="white-star"  src="./assets/star.svg">
-            <img class="star hidden" id="orange-star" src="./assets/star-active">
+            <img class="star" id="star"  src="./assets/${ideas[i].star}.svg">
             <img class="delete" id="clear-x" src="./assets/delete.svg">
             <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
           </div>
@@ -78,12 +85,10 @@ function renderCards() {
 }
 
 function disableSaveButton() {
-  console.log(!titleInput.value || !bodyInput.value)
   if(!titleInput.value || !bodyInput.value) {
     saveButton.classList.add("disable")
     saveButton.disabled = true
   } else {
-    console.log("here!!!!!!")
     saveButton.classList.remove("disable")
     saveButton.disabled = false
   }

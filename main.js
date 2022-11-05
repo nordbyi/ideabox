@@ -4,7 +4,6 @@ var titleInput = document.querySelector('#title-input')
 var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
 var inputs = document.querySelectorAll('.block')
-console.log(inputs);
 
 disableSaveButton()
 
@@ -21,7 +20,6 @@ saveButton.addEventListener('click', function(event) {
 cardContainer.addEventListener('click', cardAction)
 
 for(var i = 0; i < inputs.length; i++) {
-  console.log(inputs[i])
   inputs[i].addEventListener('keyup', disableSaveButton)
 }
 
@@ -35,7 +33,7 @@ function cardAction() {
   console.log(event.target);
   for (var i = 0; i < ideas.length; i++) {
     // Deletes
-    if (ideas[i].id === Number(cardID)) {
+    if (ideas[i].id === Number(cardID) && event.target.id === 'clear-x') {
       ideas.splice(i, 1)
       // Stars
     }
@@ -84,12 +82,10 @@ function renderCards() {
 }
 
 function disableSaveButton() {
-  console.log(!titleInput.value || !bodyInput.value)
   if(!titleInput.value || !bodyInput.value) {
     saveButton.classList.add("disable")
     saveButton.disabled = true
   } else {
-    console.log("here!!!!!!")
     saveButton.classList.remove("disable")
     saveButton.disabled = false
   }

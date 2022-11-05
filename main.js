@@ -37,8 +37,9 @@ function cardAction() {
       ideas.splice(i, 1)
       // Stars
     }
-    if(event.target.id === 'white-star') {
-    
+    if(ideas[i].id === Number(cardID) && event.target.id === 'white-star') {
+      ideas[i].updateIdea()
+      console.log(ideas[i])
     }
   }
   renderCards()
@@ -58,14 +59,16 @@ function resetInputs() {
   disableSaveButton()
 }
 
+var star1 = 'star';
+var star2 = 'star-active'
+
 function renderCards() {
   cardContainer.innerHTML = ""
   for (var i = 0; i < ideas.length; i++) {
     cardContainer.innerHTML += `
         <div class="card" id="${ideas[i].id}">
           <div class="card-header">
-            <img class="star" id="white-star"  src="./assets/star.svg">
-            <img class="star hidden" id="orange-star" src="./assets/star-active">
+            <img class="star" id="star"  src="./assets/${ideas[i].star}.svg">
             <img class="delete" id="clear-x" src="./assets/delete.svg">
             <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
           </div>

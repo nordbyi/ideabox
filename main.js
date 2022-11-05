@@ -4,10 +4,12 @@ var titleInput = document.querySelector('#title-input')
 var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
 var inputs = document.querySelectorAll('.block')
-
+var toggleFavorites = document.querySelector('#nav-btn')
+//show-starred-button
 disableSaveButton()
 
 //event Listeners
+//show-starred-button
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
@@ -23,11 +25,28 @@ for(var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('keyup', disableSaveButton)
 }
 
+toggleFavorites.addEventListener('click', function() {
+  // renderFaves(faveArray())
+  if (currentView === "All") {
+    currentView = "Favorites"
+    renderCards(faveArray())
+      toggleFavorites.innerText = "Show All Ideas"
+  } else {
+    currentView = "All"
+    renderCards()
+    toggleFavorites.innerText = "Show Starred Ideas"
+  }
+})
+
+
 //Global Variables
 var ideas = []
 var currentIdea;
+var currentView = "All"
 
 //Functions
+//show-starred-button function - everytime we envoke click, show favorited cards
+// if ideas[i].star === true &&
 function cardAction() {
   console.log(ideas)
   var cardID = event.target.closest('.card').id
@@ -65,10 +84,45 @@ function resetInputs() {
 // var star1 = 'star';
 // var star2 = 'star-active'
 
-function renderCards() {
+function renderCards(arr = ideas) {
+  cardContainer.innerHTML = ""
+  for (var i = 0; i < arr.length; i++) {
+    cardContainer.innerHTML += `
+        <div class="card" id="${arr[i].id}">
+          <div class="card-header">
+            <img class="star" id="star"  src="./assets/${arr[i].star ? "star-active" : "star" }.svg">
+            <img class="delete" id="clear-x" src="./assets/delete.svg">
+            <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
+          </div>
+          <div class="card-body">
+            <h2>${arr[i].title}</h2>
+            <p>${arr[i].body}</p>
+          </div>
+          <div class="card-footer">
+            <img class="comment" id="comment" src="./assets/comment.svg">
+            <p>Comment</p>
+          </div>
+        </div>`
+  }
+  // faveIdeas.push(ideas[i].star)
+  //when show starred ideas is clicked we want to render the faveIdeas variable
+}
+
+function faveArray() {
+  var faveIdeas = []
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].star) {
+    faveIdeas.push(ideas[i])
+    }
+  }
+  return faveIdeas
+}
+//ray of ideas => make array of favorite ideas
+
+function renderFaves() {
   cardContainer.innerHTML = ""
   for (var i = 0; i < ideas.length; i++) {
-    // console.log(ideas[i].star)
+    if (ideas[i].star) {
     cardContainer.innerHTML += `
         <div class="card" id="${ideas[i].id}">
           <div class="card-header">
@@ -85,7 +139,8 @@ function renderCards() {
             <p>Comment</p>
           </div>
         </div>`
-  }
+      }
+    }
 }
 
 function disableSaveButton() {

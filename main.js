@@ -5,11 +5,17 @@ var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
 var inputs = document.querySelectorAll('.block')
 var toggleFavorites = document.querySelector('#nav-btn')
-//show-starred-button
+var searchBar = document.querySelector('#site-search')
+
 disableSaveButton()
 
 //event Listeners
 //show-starred-button
+searchBar.addEventListener('keyup', function() {
+  filterInput()
+  //filterCard based on "string of letter" or "phrase" (searchObject.value)
+})
+
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
@@ -45,6 +51,10 @@ var currentIdea;
 var currentView = "All"
 
 //Functions
+function filterInput() {
+  console.log('input value', searchBar.value)
+  //var 
+}
 //show-starred-button function - everytime we envoke click, show favorited cards
 // if ideas[i].star === true &&
 function cardAction() {

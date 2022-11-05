@@ -59,7 +59,8 @@ form {
   background: #A9AAD2;
   color: #1f1f3d;
   width: 80vw;
-  height: 50%;
+  height: 400px;
+  min-height: 400px;
 }
 
 .input {
@@ -78,6 +79,15 @@ form {
 
 .label {
   width: 400px;
+  margin-bottom: 100px;
+}
+
+.title-container .input {
+  margin-top: 5px;
+}
+
+.body-container .input {
+  margin-top: 5px;
 }
 
 .save-button {

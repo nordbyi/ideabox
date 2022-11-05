@@ -4,10 +4,12 @@ var titleInput = document.querySelector('#title-input')
 var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
 var inputs = document.querySelectorAll('.block')
-
+var toggleFavorites = document.querySelector('#nav-btn')
+//show-starred-button
 disableSaveButton()
 
 //event Listeners
+//show-starred-button
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
@@ -23,11 +25,15 @@ for(var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('keyup', disableSaveButton)
 }
 
+toggleFavorites.addEventListener('click', renderFaves)
+
 //Global Variables
 var ideas = []
 var currentIdea;
 
 //Functions
+//show-starred-button function - everytime we envoke click, show favorited cards
+// if ideas[i].star === true &&
 function cardAction() {
   console.log(ideas)
   var cardID = event.target.closest('.card').id
@@ -86,6 +92,30 @@ function renderCards() {
           </div>
         </div>`
   }
+}
+
+function renderFaves() {
+  cardContainer.innerHTML = ""
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].star) {
+    cardContainer.innerHTML += `
+        <div class="card" id="${ideas[i].id}">
+          <div class="card-header">
+            <img class="star" id="star"  src="./assets/${ideas[i].star ? "star-active" : "star" }.svg">
+            <img class="delete" id="clear-x" src="./assets/delete.svg">
+            <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
+          </div>
+          <div class="card-body">
+            <h2>${ideas[i].title}</h2>
+            <p>${ideas[i].body}</p>
+          </div>
+          <div class="card-footer">
+            <img class="comment" id="comment" src="./assets/comment.svg">
+            <p>Comment</p>
+          </div>
+        </div>`
+      }
+    }
 }
 
 function disableSaveButton() {

@@ -52,19 +52,18 @@ var currentView = "All"
 
 //Functions
 function filterInput() {
-  console.log('input value', searchBar.value)
+  var dynamicArray
+  currentView === "All" ? dynamicArray = ideas : dynamicArray = faveArray()
+  
   var filteredCards = []
-  for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].title.includes(searchBar.value) || ideas[i].body.includes(searchBar.value) ) {
-      filteredCards.push(ideas[i])
+  for (var i = 0; i < dynamicArray.length; i++) {
+    if (dynamicArray[i].title.includes(searchBar.value) || dynamicArray[i].body.includes(searchBar.value) ) {
+      filteredCards.push(dynamicArray[i])
     }
-    //display the character/keys that are being put in
   }
   renderCards(filteredCards)
-  //var 
 }
-//show-starred-button function - everytime we envoke click, show favorited cards
-// if ideas[i].star === true &&
+
 function cardAction() {
   console.log(ideas)
   var cardID = event.target.closest('.card').id

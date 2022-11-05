@@ -13,7 +13,7 @@ saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
   storeIdea()
-  addCard()
+  renderCards()
   resetInputs()
   // disableSaveButton()
 })
@@ -31,10 +31,13 @@ var currentIdea;
 
 //Functions
 function cardAction() {
-  //if e.target.classList.id === event.target Id ; use method that will pull from array
-  //event.target.parentNode.id
-  //event.target.closest('.card')
-  console.log(event.target.closest('.card').id)
+  var cardID = event.target.closest('.card').id
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].id === Number(cardID)) {
+      ideas.splice(i, 1)
+    }
+  }
+  renderCards()
 }
 
 function newIdea() {
@@ -51,24 +54,27 @@ function resetInputs() {
   disableSaveButton()
 }
 
-function addCard() {
-  cardContainer.innerHTML += `
-      <div class="card" id="${currentIdea.id}">
-        <div class="card-header">
-          <img class="star" id="white-star"  src="./assets/star.svg">
-          <img class="star hidden" id="orange-star" src="./assets/star-active">
-          <img class="delete" id="clear-x" src="./assets/delete.svg">
-          <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
-        </div>
-        <div class="card-body">
-          <h2>${currentIdea.title}</h2>
-          <p>${currentIdea.body}</p>
-        </div>
-        <div class="card-footer">
-          <img class="comment" id="comment" src="./assets/comment.svg">
-          <p>Comment</p>
-        </div>
-      </div>`
+function renderCards() {
+  cardContainer.innerHTML = ""
+  for (var i = 0; i < ideas.length; i++) {
+    cardContainer.innerHTML += `
+        <div class="card" id="${ideas[i].id}">
+          <div class="card-header">
+            <img class="star" id="white-star"  src="./assets/star.svg">
+            <img class="star hidden" id="orange-star" src="./assets/star-active">
+            <img class="delete" id="clear-x" src="./assets/delete.svg">
+            <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
+          </div>
+          <div class="card-body">
+            <h2>${ideas[i].title}</h2>
+            <p>${ideas[i].body}</p>
+          </div>
+          <div class="card-footer">
+            <img class="comment" id="comment" src="./assets/comment.svg">
+            <p>Comment</p>
+          </div>
+        </div>`
+  }
 }
 
 function disableSaveButton() {

@@ -53,6 +53,14 @@ var currentView = "All"
 //Functions
 function filterInput() {
   console.log('input value', searchBar.value)
+  var filteredCards = []
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].title.includes(searchBar.value) || ideas[i].body.includes(searchBar.value) ) {
+      filteredCards.push(ideas[i])
+      console.log('array', filteredCards)
+    }
+    //display the character/keys that are being put in
+  }
   //var 
 }
 //show-starred-button function - everytime we envoke click, show favorited cards

@@ -32,9 +32,15 @@ var currentIdea;
 //Functions
 function cardAction() {
   var cardID = event.target.closest('.card').id
+  console.log(event.target);
   for (var i = 0; i < ideas.length; i++) {
+    // Deletes
     if (ideas[i].id === Number(cardID)) {
       ideas.splice(i, 1)
+      // Stars
+    }
+    if(event.target.id === 'white-star') {
+    
     }
   }
   renderCards()

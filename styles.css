@@ -9,33 +9,43 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   border: solid 1px orange;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background: #e9e9f4;
 }
 
 /* NavBar */
 .side-nav {
   background: #1f1f3d;
-  width: 25%;
+  /* width: 340px;
+  min-width: 340px; */
+  width: 24vw;
+  min-width: 24vw;
 }
 
 .logo {
   color: #e9e9f3;
-  margin: 10px;
+  margin: 25px;
 }
 
 .nav-btn {
   color: #e9e9f3;
   background: #5356a4;
-  padding: 10px 15px;
+  padding: 12px 6px;
   border: none;
   font-weight: bold;
-  margin: 15px;
+  /* margin: 25px; */
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  width: 300px;
+  font-size: 25px;
 }
 
 .sub-heading   {
   color: #BFBFDD;
-  margin: 15px;
+  margin: 25px;
+  font-size: 18px;
 }
 
 hr {
@@ -47,7 +57,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
 }
 
 form {
@@ -55,11 +65,15 @@ form {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   background: #A9AAD2;
   color: #1f1f3d;
-  width: 80vw;
-  height: 50%;
+  /* width: 100%; */
+  min-width: 76vw;
+  width: 76vw;
+  height: 400px;
+  min-height: 400px;
+  margin-left: 2px;
 }
 
 .input {
@@ -78,6 +92,15 @@ form {
 
 .label {
   width: 400px;
+  margin-bottom: 100px;
+}
+
+.title-container .input {
+  margin-top: 5px;
+}
+
+.body-container .input {
+  margin-top: 5px;
 }
 
 .save-button {
@@ -103,17 +126,27 @@ form {
   padding: 8px;
 }
 
+/* Jesus start */
+
 /* Cards */
+.card-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+}
 
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   outline: 2px solid black;
-  width: 300px;
-  height: 325px;
-  margin-top: 15px;
+  width: 330px;
+  height: 400px;
   background: #fff;
+  margin: 20px 15px 15px 20px;
 }
 
 .card-header {
@@ -125,9 +158,6 @@ form {
   height: 12%;
 
 }
-.star {
-
-}
 
 .card-body {
   background: #FFFFFF;
@@ -136,10 +166,6 @@ form {
   margin-left: 15px;
   /* border: 1px solid red; */
   height: 76%;
-}
-
-.card-body h2 {
-
 }
 
 .card-body p {

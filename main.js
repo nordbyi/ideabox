@@ -5,11 +5,17 @@ var bodyInput = document.querySelector('#body-input')
 var cardContainer = document.querySelector('#card-container')
 var inputs = document.querySelectorAll('.block')
 var toggleFavorites = document.querySelector('#nav-btn')
-//show-starred-button
+var searchBar = document.querySelector('#site-search')
+
 disableSaveButton()
 
 //event Listeners
 //show-starred-button
+searchBar.addEventListener('keyup', function() {
+  filterInput()
+  //filterCard based on "string of letter" or "phrase" (searchObject.value)
+})
+
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
@@ -45,8 +51,19 @@ var currentIdea;
 var currentView = "All"
 
 //Functions
-//show-starred-button function - everytime we envoke click, show favorited cards
-// if ideas[i].star === true &&
+function filterInput() {
+  var dynamicArray
+  currentView === "All" ? dynamicArray = ideas : dynamicArray = faveArray()
+  
+  var filteredCards = []
+  for (var i = 0; i < dynamicArray.length; i++) {
+    if (dynamicArray[i].title.includes(searchBar.value) || dynamicArray[i].body.includes(searchBar.value) ) {
+      filteredCards.push(dynamicArray[i])
+    }
+  }
+  renderCards(filteredCards)
+}
+
 function cardAction() {
   console.log(ideas)
   var cardID = event.target.closest('.card').id
@@ -81,7 +98,7 @@ function resetInputs() {
 // var star1 = 'star';
 // var star2 = 'star-active'
 
-function renderCards(arr = ideas) {
+function renderCards(arr = ideas) { //faveFUNCTION EVURRRRR!!!
   cardContainer.innerHTML = ""
   for (var i = 0; i < arr.length; i++) {
     cardContainer.innerHTML += `

@@ -50,20 +50,17 @@ var currentView = "All"
 function cardAction() {
   console.log(ideas)
   var cardID = event.target.closest('.card').id
-  // console.log(event.target);
   for (var i = 0; i < ideas.length; i++) {
-    // Deletes
     if (ideas[i].id === Number(cardID) && event.target.id === 'clear-x') {
       ideas.splice(i, 1)
       break
-      // Stars
     }
     if(ideas[i].id === Number(cardID) && event.target.id === 'star') {
       ideas[i].updateIdea()
       console.log(ideas[i])
     }
   }
-  renderCards()
+  currentView === "All" ? renderCards() : renderCards(faveArray())
 }
 
 function newIdea() {

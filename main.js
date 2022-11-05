@@ -57,10 +57,10 @@ function filterInput() {
   for (var i = 0; i < ideas.length; i++) {
     if (ideas[i].title.includes(searchBar.value) || ideas[i].body.includes(searchBar.value) ) {
       filteredCards.push(ideas[i])
-      console.log('array', filteredCards)
     }
     //display the character/keys that are being put in
   }
+  renderCards(filteredCards)
   //var 
 }
 //show-starred-button function - everytime we envoke click, show favorited cards
@@ -99,7 +99,7 @@ function resetInputs() {
 // var star1 = 'star';
 // var star2 = 'star-active'
 
-function renderCards(arr = ideas) {
+function renderCards(arr = ideas) { //faveFUNCTION EVURRRRR!!!
   cardContainer.innerHTML = ""
   for (var i = 0; i < arr.length; i++) {
     cardContainer.innerHTML += `

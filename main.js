@@ -25,7 +25,10 @@ for(var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('keyup', disableSaveButton)
 }
 
-toggleFavorites.addEventListener('click', renderFaves)
+toggleFavorites.addEventListener('click', function() {
+  renderFaves()
+  toggleFavorites.innerText = "Show All Ideas"
+})
 
 //Global Variables
 var ideas = []

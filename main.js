@@ -29,15 +29,17 @@ var currentIdea;
 
 //Functions
 function cardAction() {
+  console.log(ideas)
   var cardID = event.target.closest('.card').id
-  console.log(event.target);
+  // console.log(event.target);
   for (var i = 0; i < ideas.length; i++) {
     // Deletes
     if (ideas[i].id === Number(cardID) && event.target.id === 'clear-x') {
       ideas.splice(i, 1)
+      break
       // Stars
     }
-    if(ideas[i].id === Number(cardID) && event.target.id === 'white-star') {
+    if(ideas[i].id === Number(cardID) && event.target.id === 'star') {
       ideas[i].updateIdea()
       console.log(ideas[i])
     }
@@ -51,6 +53,7 @@ function newIdea() {
 
 function storeIdea() {
   ideas.push(currentIdea)
+  console.log(ideas)
 }
 
 function resetInputs() {
@@ -59,16 +62,17 @@ function resetInputs() {
   disableSaveButton()
 }
 
-var star1 = 'star';
-var star2 = 'star-active'
+// var star1 = 'star';
+// var star2 = 'star-active'
 
 function renderCards() {
   cardContainer.innerHTML = ""
   for (var i = 0; i < ideas.length; i++) {
+    // console.log(ideas[i].star)
     cardContainer.innerHTML += `
         <div class="card" id="${ideas[i].id}">
           <div class="card-header">
-            <img class="star" id="star"  src="./assets/${ideas[i].star}.svg">
+            <img class="star" id="star"  src="./assets/${ideas[i].star ? "star-active" : "star" }.svg">
             <img class="delete" id="clear-x" src="./assets/delete.svg">
             <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
           </div>

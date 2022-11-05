@@ -13,7 +13,7 @@ saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
   storeIdea()
-  addCard()
+  renderCards()
   resetInputs()
   // disableSaveButton()
 })
@@ -37,6 +37,7 @@ function cardAction() {
       ideas.splice(i, 1)
     }
   }
+  renderCards()
 }
 
 function newIdea() {
@@ -53,24 +54,27 @@ function resetInputs() {
   disableSaveButton()
 }
 
-function addCard() {
-  cardContainer.innerHTML += `
-      <div class="card" id="${currentIdea.id}">
-        <div class="card-header">
-          <img class="star" id="white-star"  src="./assets/star.svg">
-          <img class="star hidden" id="orange-star" src="./assets/star-active">
-          <img class="delete" id="clear-x" src="./assets/delete.svg">
-          <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
-        </div>
-        <div class="card-body">
-          <h2>${currentIdea.title}</h2>
-          <p>${currentIdea.body}</p>
-        </div>
-        <div class="card-footer">
-          <img class="comment" id="comment" src="./assets/comment.svg">
-          <p>Comment</p>
-        </div>
-      </div>`
+function renderCards() {
+  cardContainer.innerHTML = ""
+  for (var i = 0; i < ideas.length; i++) {
+    cardContainer.innerHTML += `
+        <div class="card" id="${ideas[i].id}">
+          <div class="card-header">
+            <img class="star" id="white-star"  src="./assets/star.svg">
+            <img class="star hidden" id="orange-star" src="./assets/star-active">
+            <img class="delete" id="clear-x" src="./assets/delete.svg">
+            <img class="delete hidden" id="active-x" src="./assets/delete-active.svg">
+          </div>
+          <div class="card-body">
+            <h2>${ideas[i].title}</h2>
+            <p>${ideas[i].body}</p>
+          </div>
+          <div class="card-footer">
+            <img class="comment" id="comment" src="./assets/comment.svg">
+            <p>Comment</p>
+          </div>
+        </div>`
+  }
 }
 
 function disableSaveButton() {

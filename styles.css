@@ -19,13 +19,14 @@ body {
   background: #1f1f3d;
   /* width: 340px;
   min-width: 340px; */
-  width: 24vw;
-  min-width: 24vw;
+  width: 24vw; 
+  min-width: 25vw;
 }
 
 .logo {
   color: #e9e9f3;
-  margin: 25px;
+  margin: 22px;
+  font-size: 21px;
 }
 
 .nav-btn {
@@ -33,23 +34,26 @@ body {
   background: #5356a4;
   padding: 12px 6px;
   border: none;
-  font-weight: bold;
-  /* margin: 25px; */
+  font-weight: 600;
+  margin: 5px;
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 35px;
-  width: 300px;
-  font-size: 25px;
+  width: 236px;
+  font-size: 20px;
+  border-radius: 2px;
 }
 
 .sub-heading   {
   color: #BFBFDD;
   margin: 25px;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 hr {
   background-color: #353567;
+  opacity: .1;
 }
 
 /* Form */
@@ -78,8 +82,9 @@ form {
 
 .input {
   width: 400px;
-  height: 40px;
-  border: solid 2px #353567;
+  height: 47px;
+  border: solid 2px #35355fbd;
+  border-radius: 2px;
 }
 
 .body {
@@ -121,9 +126,13 @@ form {
 }
 
 .search-image {
-  width: 10%;
+  width: 11%;
+  height: 47px;
   background: #353567;
-  padding: 8px;
+  outline: 2px;
+  color: #353567;
+  border-radius: 2px;
+  padding: 9px;
 }
 
 /* Jesus start */

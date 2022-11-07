@@ -158,6 +158,13 @@ form {
   margin: 20px 15px 15px 20px;
 }
 
+.input-title {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card-header {
   display: flex;
   align-content: center;
@@ -173,6 +180,7 @@ form {
   width: 250px;
   margin-top: 10px;
   margin-left: 15px;
+  overflow: hidden;
   /* border: 1px solid red; */
   height: 76%;
 }

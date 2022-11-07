@@ -130,8 +130,6 @@ function renderCards(arr = ideas) { //faveFUNCTION EVURRRRR!!!
             <p>${arr[i].body}</p>
           </div>
           <div class="card-footer">
-            <img class="comment" id="comment" src="./assets/comment.svg">
-            <p>Comment</p>
           </div>
         </div>`
   }

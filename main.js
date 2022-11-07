@@ -27,6 +27,23 @@ saveButton.addEventListener('click', function(event) {
 
 cardContainer.addEventListener('click', cardAction)
 
+cardContainer.addEventListener('mouseover', deleteHover)
+function deleteHover() {
+  if (event.target.id === 'clear-x') {
+    event.target.classList.toggle('hidden') 
+    event.target.nextElementSibling.classList.toggle('hidden')
+  } 
+}
+cardContainer.addEventListener('mouseout', deleteInactive)
+function deleteInactive() {
+  if (event.target.id === 'active-x') {
+    event.target.classList.toggle('hidden') 
+    event.target.previousElementSibling.classList.toggle('hidden')
+  } 
+}
+  
+
+
 for(var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('keyup', disableSaveButton)
 }
@@ -68,7 +85,7 @@ function cardAction() {
   console.log(ideas)
   var cardID = event.target.closest('.card').id
   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].id === Number(cardID) && event.target.id === 'clear-x') {
+    if (ideas[i].id === Number(cardID) && event.target.id === 'active-x') {
       ideas.splice(i, 1)
       break
     }

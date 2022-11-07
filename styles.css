@@ -52,7 +52,6 @@ body {
 
 hr {
   background-color: #353567;
-  opacity: .1;
 }
 
 /* Form */
@@ -127,10 +126,7 @@ form {
   width: 12%;
   background: #353567;
   padding: 12px;
-  height: 47px;
-  outline: 2px;
-  color: #353567;
-  border-radius: 2px;
+  border-radius: 2px; 
 }
 
 /* Cards */
@@ -173,11 +169,10 @@ form {
 
 .card-body {
   background: #FFFFFF;
-  width: 250px;
   margin-top: 18px;
   margin-left: 15px;
-  overflow: hidden;
-  /* border: 1px solid red; */
+  overflow: auto;
+  word-wrap: break-word;
   height: 76%;
 }
 

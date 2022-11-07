@@ -1,11 +1,11 @@
 //Query Selectors
-var saveButton = document.querySelector('#save-button')
-var titleInput = document.querySelector('#title-input')
-var bodyInput = document.querySelector('#body-input')
-var cardContainer = document.querySelector('#card-container')
+var saveButton = document.querySelector('#saveButton')
+var titleInput = document.querySelector('#titleInput')
+var bodyInput = document.querySelector('#bodyInput')
+var cardContainer = document.querySelector('#cardContainer')
 var inputs = document.querySelectorAll('.block')
-var toggleFavorites = document.querySelector('#nav-btn')
-var searchBar = document.querySelector('#site-search')
+var toggleFavorites = document.querySelector('#navBtn')
+var searchBar = document.querySelector('#siteSearch')
 
 disableSaveButton()
 

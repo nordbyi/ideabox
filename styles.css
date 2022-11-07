@@ -17,8 +17,6 @@ body {
 /* NavBar */
 .side-nav {
   background: #1f1f3d;
-  /* width: 340px;
-  min-width: 340px; */
   width: 25vw;
   min-width: 25vw;
 }
@@ -35,9 +33,7 @@ body {
   padding: 12px 6px;
   border: none;
   font-weight: bold;
-  margin-left: 20px;
-  margin-top: 18px;
-  margin-bottom: 35px;
+  margin: 18px 0 35px 20px;
   width: 320px;
   font-size: 25px;
   border-radius: 2px;
@@ -76,15 +72,16 @@ form {
 }
 
 .input {
-
   width: 500px;
   height: 60px;
   border: solid 2px #353567;
   border-radius: 2px;
+  padding: 5px;
 }
 
 .body {
-  height: 120px
+  height: 120px;
+  resize: none;
 }
 
 .block {
@@ -97,10 +94,7 @@ form {
   font-size: 20px;
 }
 
-.title-container .input {
-  margin-top: 5px;
-}
-
+.title-container .input,
 .body-container .input {
   margin-top: 5px;
 }
@@ -126,7 +120,7 @@ form {
   width: 12%;
   background: #353567;
   padding: 12px;
-  border-radius: 2px; 
+  border-radius: 2px;
 }
 
 /* Cards */
@@ -205,17 +199,12 @@ form {
   cursor: not-allowed;
 }
 
-/*  */
 .hidden {
   display: none;
 }
 
- hr{
+hr {
   background-color:#353567;
   height: 2px;
   border: none;
 }
-
-
-
-

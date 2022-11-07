@@ -25,7 +25,8 @@ body {
 
 .logo {
   color: #e9e9f3;
-  margin: 25px;
+  margin: 22px;
+  font-size: 21px;
 }
 
 .nav-btn {
@@ -39,16 +40,19 @@ body {
   margin-bottom: 35px;
   width: 320px;
   font-size: 25px;
+  border-radius: 2px;
 }
 
 .sub-heading   {
   color: #BFBFDD;
   margin: 25px;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 hr {
   background-color: #353567;
+  opacity: .1;
 }
 
 /* Form */
@@ -73,6 +77,7 @@ form {
 }
 
 .input {
+
   width: 500px;
   height: 60px;
   border: solid 2px #353567;
@@ -122,9 +127,11 @@ form {
   width: 12%;
   background: #353567;
   padding: 12px;
+  height: 47px;
+  outline: 2px;
+  color: #353567;
+  border-radius: 2px;
 }
-
-/* Jesus start */
 
 /* Cards */
 .card-container {
@@ -148,6 +155,13 @@ form {
   border-radius: 3px;
 }
 
+.input-title {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card-header {
   display: flex;
   align-content: center;
@@ -162,6 +176,8 @@ form {
   width: 250px;
   margin-top: 18px;
   margin-left: 15px;
+  overflow: hidden;
+  /* border: 1px solid red; */
   height: 76%;
 }
 

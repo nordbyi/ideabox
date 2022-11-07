@@ -20,7 +20,7 @@ saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   newIdea()
   storeIdea()
-  renderCards()
+  currentView === "All" ? renderCards() : renderCards(faveArray())
   resetInputs()
 })
 
@@ -116,16 +116,16 @@ function toggleView() {
 
 function deleteHover() {
   if (event.target.id === 'clear-x') {
-    event.target.classList.toggle('hidden') 
+    event.target.classList.toggle('hidden')
     event.target.nextElementSibling.classList.toggle('hidden')
-  } 
+  }
 }
 
 function deleteInactive() {
   if (event.target.id === 'active-x') {
-    event.target.classList.toggle('hidden') 
+    event.target.classList.toggle('hidden')
     event.target.previousElementSibling.classList.toggle('hidden')
-  } 
+  }
 }
 
 function disableSaveButton() {

@@ -3,6 +3,9 @@ This is an app for users to keep track of their ideas, big or small. Some featur
 users being able to save, delete and filter ideas. When the user thinks of a great idea that they want to remember, they can enter it into Ideabox. The ideas will save on the homepage. The user has the ability
 to favorite ideas and save them in a favorites folder. All cards can be filtered through in order to access them more quickly. If the user would like to remove a card the have the ability to do so from the home page or the favorite page.
 
+### Deployed Site
+[GitHub pages](https://nordbyi.github.io/ideabox/)
+
 ### Installation Instructions
 1. Fork this project to your own Github account
 2. Clone the repository to your local machine
@@ -17,10 +20,11 @@ Our team is in week 4 of Turing mod 1. We had six days to complete the project. 
 working as a team.
 
 ### Contributors
+- Ian Nordby [linkedIn](https://www.linkedin.com/in/iannordby/), [Github](https://github.com/nordbyi)<br>
 - Jocelle Bautista [LinkedIn](https://www.linkedin.com/in/jocelle-bautista-8a760b24a/), [Github](https://github.com/baut-jc)<br>
 - Jesus Borjas [LinkedIn](https://www.linkedin.com/in/jesus-borjas-6589b920a/), [Github](https://github.com/jesusborjas006)<br>
 - Ciera DePauw [linkedIn](https://www.linkedin.com/in/ciera-depauw-a32bab253/), [Github](https://github.com/cieragrace)<br>
-- Ian Nordby [linkedIn](https://www.linkedin.com/in/iannordby/), [Github](https://github.com/nordbyi)<br>
+
 
 ### Learning Goals
 - Gain an understanding of how to write clean HTML and CSS to match a provided comp.
